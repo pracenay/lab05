@@ -20,7 +20,8 @@
 	},
 	"homepage": "https://github.com/pracenay/lab05#readme",
 	"dependencies": {
-		"express": "^4.18.2"
+		"express": "^4.18.2",
+		"eslint": "^8.36.0"
 	},
 	"eslintConfig": {
 		"parserOptions": {
