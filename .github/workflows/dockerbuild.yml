@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-     steps:
+    steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -29,10 +29,10 @@ jobs:
 
       - name: Login Docker Hub
         uses: docker/login-action@v1
-        with: 
+        with:
           username: ${{ secrets.USERNAME_SECRET }}
           password: ${{ secrets.PASSWORD_SECRET }}
 
       - name: Push Docker Image
         run: docker push ${{ secrets.USERNAME_SECRET }}/lab05
-        if: success() 
+        if: success()
