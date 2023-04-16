@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab05-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: lab05
+  template:
+    metadata:
+      labels:
+        app: lab05
+    spec:
+      containers:
+        - name: lab05
+          image: yanecarp/lab05:latest
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /healthcheck
+              port: 8080
